@@ -1,0 +1,52 @@
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "one two three"
+      "four five six"
+      ". . .";
+  }
+
+.one { grid-area: one; background-color: aqua; background-image: url("https://cdn.pixabay.com/photo/2023/07/01/11/40/old-tree-8100015_1280.jpg");}
+
+.two { grid-area: two; background-color: bisque; background-image: url("https://cdn.pixabay.com/photo/2023/07/04/17/28/red-squirrel-8106701_1280.jpg");}
+
+.three { grid-area: three; background-color: aquamarine;  background-image: url("https://cdn.pixabay.com/photo/2023/06/29/22/04/barn-swallow-8097199_1280.jpg");}
+
+.four { grid-area: four; background-color: black; background-image: url("https://cdn.pixabay.com/photo/2023/07/04/20/27/cairn-8107031_1280.jpg");}
+
+.five { grid-area: five; background-color: blue; background-image: url("https://cdn.pixabay.com/photo/2023/07/01/14/09/parrot-8100214_1280.jpg");}
+
+.six { grid-area: six; background-color: brown; background-image: url("https://cdn.pixabay.com/photo/2023/07/03/15/20/butterfly-8104454_1280.png");}
+
+.one ,.two ,.three ,.four , .five, .six{
+    width: 360px; 
+    height: 250px; 
+    border-radius: 12px;
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+
+@media (max-width: 600px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas:
+          "one"
+          "two"
+          "three"
+          "four"
+          "five"
+          "six";
+      }
+      .one,
+      .two,
+      .three,
+      .four,
+      .five,
+      .six {
+        width: 100%;
+      }
+    }
